@@ -5,7 +5,7 @@ import { API_SEARCH_LOCATION_URL } from '../../../constants';
 import { useStore } from '../../../contexts/StoreContexts';
 
 export const useSearchWeather = () => {
-  const [, { updateLoading }] = useStore();
+  const [{ loading }, { updateLoading }] = useStore();
   const [searchValue, setSearchValue] = useState('');
   const [locationList, setLocationList] = useState([]);
   const [showResultList, setShowResultList] = useState(false);
@@ -45,6 +45,14 @@ export const useSearchWeather = () => {
       })();
     }
   }, [searchValue])
+
+  useEffect(() => {
+    if (loading) {
+      setLocationList([]);
+      showResultList && setShowResultList(false);
+      isNoResult && setIsNoResult(false);
+    }
+  }, [loading])
 
   return {
     searchValue,

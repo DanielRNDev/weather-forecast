@@ -11,15 +11,23 @@ import HeavyCloud from '../assets/heavy-cloud.png';
 import LightRain from '../assets/light-rain.png';
 import HeavyRain from '../assets/heavy-rain.png';
 import Showers from '../assets/showers.png';
+import Snow from '../assets/snow.png';
+import Sleet from '../assets/sleet.png';
+import Hail from '../assets/hail.png';
+import Thunderstorm from '../assets/thunderstorm.png';
 import Weather from '../assets/weather.png';
 
 const ICON_MAPPING = {
-  s: Showers,
   c: Clear,
-  hc: HeavyCloud,
   lc: LightCloud,
+  hc: HeavyCloud,
   lr: LightRain,
-  hr: HeavyRain
+  hr: HeavyRain,
+  s: Showers,
+  sn: Snow,
+  sl: Sleet,
+  h: Hail,
+  t: Thunderstorm,
 }
 
 dayjs.extend(calendar)

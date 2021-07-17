@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_GET_WEATHER_URL } from '../../../constants';
 import { useStore } from '../../../contexts/StoreContexts';
@@ -7,7 +7,7 @@ export const useGetLocationWeather = ({
   setShowResultList,
   setSearchValue,
 }) => {
-  const [, { updateLoading }] = useStore();
+  const [{ loading }, { updateLoading }] = useStore();
   const [weatherInfo, setWeatherInfo] = useState(null);
   const handleGetWeather = async (title, woeid) => {
     setSearchValue(title);
@@ -25,6 +25,12 @@ export const useGetLocationWeather = ({
       updateLoading(false);
     }
   }
+
+  useEffect(() => {
+    if (loading) {
+      setWeatherInfo(null);
+    }
+  }, [loading])
 
   return {
     weatherInfo,

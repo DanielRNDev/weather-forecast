@@ -26,7 +26,7 @@ const HomePage = () => {
     showResultList,
     setShowResultList,
     isNoResult,
-    handleSearchLocation
+    handleSearchLocation,
   } = useSearchWeather();
   const { weatherInfo, handleGetWeather } = useGetLocationWeather({ setShowResultList, setSearchValue });
 

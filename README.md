@@ -38,3 +38,6 @@ User able to change to view in Fahrenheit (℉)
 - Axios
 - Jest
 - React Testing Library
+
+## CREDITS
+![credit page](https://i.imgur.com/C6jw08p.png)

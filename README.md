@@ -7,10 +7,11 @@
 `yarn start-server`
 3. Run packages by using this command at root folder:
 `yarn start --reset-cache`
-
 ## IMPORTANT NOTE
 Because of CORS, we need to run a node server like a middleware.
-
+## UNIT TEST
+For getting unit test report, run this command at root folder:
+`yarn coverage`
 ## USER STORY
 
 As a user, first time login will show the Home screen which user can search for any places or locations:
@@ -36,3 +37,4 @@ User able to change to view in Fahrenheit (℉)
 - Express
 - Axios
 - Jest
+- React Testing Library

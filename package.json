@@ -5,6 +5,7 @@
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
+    "@testing-library/react-hooks": "^7.0.1",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "bootstrap": "5.0.2",
@@ -48,6 +49,7 @@
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@babel/runtime": "^7.11.2",
+    "axios-mock-adapter": "^1.19.0",
     "eslint": "^7.30.0",
     "eslint-plugin-react": "^7.24.0"
   }

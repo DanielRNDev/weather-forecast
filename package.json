@@ -35,7 +35,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test-cover": "yarn test --coverage",
+    "test-cover": "yarn test a --coverage",
     "coverage": "yarn test-cover && open coverage/lcov-report/index.html",
     "start-server": "node server/index.js"
   },

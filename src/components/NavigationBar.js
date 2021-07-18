@@ -31,7 +31,7 @@ const NavigationBar = () => {
   const isCelsius = temperatureFlag === 'celsius';
 
   return (
-    <NavbarWrapper bg="blue" expand="lg" fixed="top">
+    <NavbarWrapper bg="blue" expand="lg" fixed="top" data-testid="navigation-bar">
       <ContainerWrapper>
         <Navbar.Brand href="/home">
           <LogoWrapper
@@ -48,15 +48,15 @@ const NavigationBar = () => {
           </Nav>
         </Navbar.Collapse>
         <TemperatureWrapper>
-          <Temperature onClick={() => updateTemperature({ temperatureFlag: 'celsius' })}>
+          <Temperature data-testid="celsius-btn" onClick={() => updateTemperature({ temperatureFlag: 'celsius' })}>
             {
-              isCelsius ? (<b>℃</b>) : '℃'
+              isCelsius ? (<b data-testid="celsius-bold">℃</b>) : '℃'
             }
           </Temperature>
           &nbsp; / &nbsp;
-          <Temperature onClick={() => updateTemperature({ temperatureFlag: 'fahrenheit' })}>
+          <Temperature data-testid="fahrenheit-btn" onClick={() => updateTemperature({ temperatureFlag: 'fahrenheit' })}>
             {
-              isCelsius ? '℉' : (<b>℉</b>)
+              isCelsius ? '℉' : (<b data-testid="fahrenheit-bold">℉</b>)
             }
           </Temperature>
         </TemperatureWrapper>

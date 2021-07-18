@@ -14,7 +14,7 @@ const NavbarWrapper = styled(Navbar)`
 `;
 
 const Footer = () => (
-  <NavbarWrapper expand="lg" fixed="bottom">
+  <NavbarWrapper expand="lg" fixed="bottom" data-testid="footer">
     <Navbar.Brand href="/home">
       <LogoWrapper
         src={Logo}

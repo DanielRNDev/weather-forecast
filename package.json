@@ -2,6 +2,17 @@
   "name": "weather-forecast",
   "version": "0.1.0",
   "private": true,
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.{js,jsx}",
+      "src/**/**/*.{js,jsx}",
+      "src/utils/**/*.{js,jsx}",
+      "src/hooks/*.{js,jsx}",
+      "src/routes/**/*.{js,jsx}",
+      "src/contexts/**/*.{js,jsx}",
+      "!**/node_modules/**"
+    ]
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -24,8 +35,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test-cover": "yarn run test --coverage",
-    "coverage": "yarn run test-cover && open coverage/lcov-report/index.html",
+    "test-cover": "yarn test --coverage",
+    "coverage": "yarn test-cover && open coverage/lcov-report/index.html",
     "start-server": "node server/index.js"
   },
   "eslintConfig": {

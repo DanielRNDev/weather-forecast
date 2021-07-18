@@ -31,7 +31,7 @@ const HomePage = () => {
   const { weatherInfo, handleGetWeather } = useGetLocationWeather({ setShowResultList, setSearchValue });
 
   return (
-    <WrappedContainer>
+    <WrappedContainer data-testid="home-page">
       <Label>
         <Input
           value={searchValue}
@@ -41,7 +41,7 @@ const HomePage = () => {
         />
         {
           showResultList && (
-            <LocationResultWrapper>
+            <LocationResultWrapper data-testid="result-list">
               {
                 locationList.map(({ title, woeid }) => (
                   <LocationResult key={title} onClick={() => handleGetWeather(title, woeid)}>
@@ -54,7 +54,7 @@ const HomePage = () => {
         }
       </Label>
       {
-        isNoResult && <NoResult>
+        isNoResult && <NoResult data-testid="empty-result">
           No result for this location!
         </NoResult>
       }
@@ -75,7 +75,7 @@ const HomePage = () => {
         )
       }
       {
-        !!weatherInfo && <WeatherInfoWrapper>
+        !!weatherInfo && <WeatherInfoWrapper data-testid="weather-info">
           {
             weatherInfo?.consolidated_weather?.map((info) => (
               <WeatherInfo key={info.id} info={info} isCelsius={temperatureFlag === 'celsius'} />

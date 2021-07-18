@@ -19,7 +19,7 @@ const TextBold = styled.p`
 `;
 
 const AboutPage = () => (
-  <WrappedContainer>
+  <WrappedContainer data-testid="about-page">
     <TextBold>
       Author:
       </TextBold>

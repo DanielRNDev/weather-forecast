@@ -4,20 +4,12 @@ import MockAdapter from 'axios-mock-adapter';
 import { renderHookWrapper } from '../../../utils'
 import { API_SEARCH_LOCATION_URL } from '../../../constants';
 import { useSearchWeather } from '../hooks/useSearchWeather';
-
-const mockData = [
-  {
-    title: 'Johannesburg',
-    location_type: 'City',
-    woeid: 1582504,
-    latt_long: '-26.204941,28.040030',
-  },
-];
+import { mockDataLocation } from '../__mocks__';
 
 describe('verify useSearchWeather is working properly', () => {
   test('call get location success with array of locations', async () => {
     const mock = new MockAdapter(axios);
-    mock.onPost(API_SEARCH_LOCATION_URL).reply(200, mockData);
+    mock.onPost(API_SEARCH_LOCATION_URL).reply(200, mockDataLocation);
 
     let render;
 

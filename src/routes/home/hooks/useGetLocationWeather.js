@@ -11,13 +11,14 @@ export const useGetLocationWeather = ({
   const [weatherInfo, setWeatherInfo] = useState(null);
   const handleGetWeather = async (title, woeid) => {
     setSearchValue(title);
-    setShowResultList(false);
     updateLoading(true);
     try {
       const response = await axios.post(API_GET_WEATHER_URL, { woeid });
 
+      setShowResultList(false);
+
       if (response?.data) {
-        setWeatherInfo(response.data)
+        setWeatherInfo(response.data);
         updateLoading(false);
       }
     } catch (error) {
